@@ -1,0 +1,213 @@
+.vote-results {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.results-header h4 {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.consensus-tag {
+  background: rgba(107,203,119,0.2);
+  color: var(--success);
+  border: 1px solid rgba(107,203,119,0.4);
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  animation: pulse 1.5s ease-in-out 3;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* ─── Vote breakdown ─── */
+.vote-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vote-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vote-badge {
+  width: 40px;
+  height: 40px;
+  background: var(--surface2);
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.vote-bar-wrap {
+  flex: 1;
+  height: 8px;
+  background: var(--surface2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.vote-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), #c77dff);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  min-width: 4px;
+}
+
+.vote-names {
+  font-size: 13px;
+  color: var(--text-muted);
+  min-width: 80px;
+}
+
+.vote-tally {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 20px;
+  text-align: right;
+}
+
+/* ─── Stats ─── */
+.vote-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 10px 14px;
+  background: var(--surface2);
+  border-radius: var(--radius);
+}
+.vote-stats strong { color: var(--text); }
+
+/* ─── Final point picker ─── */
+.final-point-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: rgba(108,99,255,0.06);
+  border: 1px solid rgba(108,99,255,0.25);
+  border-radius: var(--radius);
+}
+
+.final-point-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.final-point-picker-header h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.current-final-badge {
+  font-size: 13px;
+  color: var(--text-muted);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.current-final-badge strong {
+  color: var(--success);
+  font-size: 15px;
+  margin-left: 4px;
+}
+
+.final-point-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-point {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  background: var(--surface2);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-point:hover { border-color: var(--primary); color: var(--primary); }
+.btn-point.active { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 0 10px rgba(108,99,255,0.45); }
+
+.btn-point-custom { font-size: 16px; }
+.btn-point-custom.active { background: var(--accent); border-color: var(--accent); color: #1a1a2e; }
+
+/* ─── Custom point input row ─── */
+.custom-point-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  animation: slide-in 0.15s ease;
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.custom-point-input {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 8px 12px;
+  outline: none;
+  text-align: center;
+  transition: border-color 0.18s;
+}
+.custom-point-input:focus { border-color: var(--primary); }
+
+/* ─── Final point display ─── */
+.final-point-display {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 12px 16px;
+  background: rgba(107,203,119,0.1);
+  border: 1px solid rgba(107,203,119,0.3);
+  border-radius: var(--radius);
+}
+.final-point-display strong {
+  color: var(--success);
+  font-size: 22px;
+  margin-left: 8px;
+}

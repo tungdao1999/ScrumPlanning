@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Environment files (contain secrets — never commit these)
+server/.env
+client/.env
+client/.env.production
+
+# Build output
+client/dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
