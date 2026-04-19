@@ -87,3 +87,11 @@
   border-radius: 10px;
   font-weight: 600;
 }
+
+@media (max-width: 540px) {
+  .app-header { padding: 0 14px; }
+  .header-title { display: none; }
+  .header-center { display: none; }
+  .user-name { display: none; }
+  .admin-tag { display: none; }
+}

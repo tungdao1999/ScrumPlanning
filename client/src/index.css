@@ -203,3 +203,11 @@ textarea { resize: vertical; }
   border: 1px solid rgba(108,99,255,0.4);
 }
 
+/* ─── Global responsive ─── */
+@media (max-width: 520px) {
+  .btn { padding: 9px 14px; font-size: 13px; }
+  .error-page h1 { font-size: 56px; }
+  .error-page h2 { font-size: 18px; }
+  .role-picker { flex-direction: column; }
+}
+

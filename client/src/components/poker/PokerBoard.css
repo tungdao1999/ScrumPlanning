@@ -260,3 +260,12 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* ─── Responsive ─── */
+@media (max-width: 520px) {
+  .poker-board { padding: 14px 14px; }
+  .quick-assign-row { flex-direction: column; gap: 6px; }
+  .qa-label { padding-top: 0; }
+  .poker-controls { flex-direction: column; }
+  .poker-controls .btn { width: 100%; }
+}

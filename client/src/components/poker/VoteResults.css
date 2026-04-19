@@ -95,7 +95,8 @@
 /* ─── Stats ─── */
 .vote-stats {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px 20px;
   font-size: 14px;
   color: var(--text-muted);
   padding: 10px 14px;
