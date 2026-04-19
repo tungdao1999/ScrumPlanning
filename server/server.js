@@ -38,8 +38,20 @@ app.use(cors({
 app.options('*', cors());
 app.use(express.json());
 
+// Request logger
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} | Origin: ${req.headers.origin || 'none'}`);
+  next();
+});
+
 app.use('/api/sessions', sessionRoutes);
 app.use('/api/stories', userStoryRoutes);
+
+// Catch-all for unmatched routes
+app.use((req, res) => {
+  console.warn(`[404] No route matched: ${req.method} ${req.originalUrl}`);
+  res.status(404).json({ error: `Cannot ${req.method} ${req.originalUrl}` });
+});
 
 app.use(errorHandler);
 
