@@ -18,18 +18,24 @@ const isProd = NODE_ENV === 'production';
 const app = express();
 const server = http.createServer(app);
 
-const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+const clientUrl = (process.env.CLIENT_URL || 'http://localhost:5173').replace(/\/$/, '');
 
 const io = new Server(server, {
   cors: {
     origin: clientUrl,
-    methods: ['GET', 'POST']
+    methods: ['GET', 'POST'],
+    credentials: true
   }
 });
 
 connectDB();
 
-app.use(cors({ origin: clientUrl }));
+app.use(cors({
+  origin: clientUrl,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
+app.options('*', cors());
 app.use(express.json());
 
 app.use('/api/sessions', sessionRoutes);
